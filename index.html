@@ -1,3 +1,5 @@
+<!-- DOM: Avengers HTML page -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,39 +12,40 @@
 </head>
 
 <body>
-<div class="container">
-    <div class="left">
-        <h1 id="title">Avengers Assemble!!</h1>
+    <div class="container">
+        <!-- Left -->
+        <div class="left">
+            <h1 id="title">Avengers Assemble!!</h1>
 
-        <!-- List of Avengers -->
-        <ul id="avenger-list">
-            <li class="avenger">Iron Man</li>
-            <li class="avenger">Thor</li>
-            <li class="avenger">Captain America</li>
-            <li class="avenger">Black Widow</li>
-            <li class="avenger">Hulk</li>
-        </ul>
+            <ul id="avenger-list">
+                <li class="avenger">Iron Man</li>
+                <li class="avenger">Thor</li>
+                <li class="avenger">Captain America</li>
+                <li class="avenger">Black Widow</li>
+                <li class="avenger">Hulk</li>
+            </ul>
 
-        <!-- Image -->
-        <img id="avenger-img" src="assets/avengers-image1.jpeg" alt="Avengers Image">
+            <!-- Image -->
+            <img id="avenger-img" src="assets/avengers-image1.jpeg" alt="Avengers Image">
+        </div>
+        <!-- right -->
+        <div class="right">
+            <!-- Buttons -->
+            <button class="btn" onclick="changeText()">Change Title Text</button>
+            <button class="btn" onclick="highlightAvengers()">Highlight Avengers</button>
+            <button class="btn" onclick="changeImage()">Change Image</button>
+            <button class="btn" onclick="addAvenger()">Add New Avenger</button>
+        </div>
     </div>
 
-    <div class="right">
-        <!-- Buttons -->
-        <button class="btn" onclick="changeText()">Change Title Text</button>
-        <button class="btn" onclick="highlightAvengers()">Highlight Avengers</button>
-        <button class="btn" onclick="changeImage()">Change Image</button>
-        <button class="btn" onclick="addAvenger()">Add New Avenger</button>
-    </div>
-</div>
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">All Rights Reserved &copy; Avengers</p>
+        <p>Created with love by Riya <b>&hearts;</b></p>
 
-<footer>
-    <p class="footer-text">All Rights Reserved &copy; Avengers</p>
-    <p>Created with love by Riya <b>&hearts;</b></p>
+    </footer>
 
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
