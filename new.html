@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avengers: DOM Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #B9BEBA;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1E2639;
+            margin-top: 20px;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+        }
+
+        .left{
+            width: 80vw;
+            margin-right: -80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: safe;
+
+        }
+
+        #avenger-list {
+            margin-top: 20px;
+            list-style-type: none;
+            color: #1E2639;
+            font-size: 20px;
+        }
+
+        #avenger-list li {
+            margin: 5px;
+        }
+
+        .highlight {
+            color: #951E22;
+        }
+
+        #avenger-img {
+            width: 500px;
+            margin-top: 10px;
+            border-radius: 20px;
+            border: 4px solid #1E2639;
+        }
+
+        .right{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 30vw;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin: 15px 15px 15px 0;
+            cursor: pointer;
+            background-color: #1E2639;
+            border-radius: 25px;
+            border: none;
+            color: #B9BEBA;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="left">
+        <h1 id="title">Avengers Assemble!!</h1>
+
+        <!-- List of Avengers -->
+        <ul id="avenger-list">
+            <li class="avenger">Iron Man</li>
+            <li class="avenger">Thor</li>
+            <li class="avenger">Captain America</li>
+            <li class="avenger">Black Widow</li>
+            <li class="avenger">Hulk</li>
+        </ul>
+
+        <!-- Image -->
+        <img id="avenger-img" src="assets/avengers-image1.jpeg" alt="Avengers Image">
+    </div>
+
+    <div class="right">
+        <!-- Buttons -->
+        <button class="btn" onclick="changeText()">Change Title Text</button>
+        <button class="btn" onclick="highlightAvengers()">Highlight Avengers</button>
+        <button class="btn" onclick="changeImage()">Change Image</button>
+        <button class="btn" onclick="addAvenger()">Add New Avenger</button>
+    </div>
+
+</div>
+    <script>
+        // Function to change the title text using innerHTML
+        function changeText() {
+            const title = document.getElementById("title");
+            title.innerHTML = "Assemble! The Avengers Are Here!";
+        }
+
+        // Function to highlight Avengers by changing the color of text using getElementsByClassName
+        function highlightAvengers() {
+            const avengers = document.getElementsByClassName("avenger");
+            for (let i = 0; i < avengers.length; i++) {
+                avengers[i].style.color = "red"; // Changing text color to red
+                avengers[i].style.fontSize = "22px"; // Changing font size
+            }
+        }
+
+        // Function to change the image source using getElementById
+        function changeImage() {
+            const img = document.getElementById("avenger-img");
+            img.src = "assets/avengers-image2.png"; // Update with a new Avengers image
+            img.alt = "New Avengers Image";
+        }
+
+        // Function to add a new Avenger to the list
+        function addAvenger() {
+            const avengerList = document.getElementById("avenger-list");
+
+            // Create new list item
+            const newAvenger = document.createElement("li");
+            newAvenger.className = "avenger"; // Add class to new element
+            newAvenger.style.color = "white"; // Set the color of new avenger
+
+            // Create text node and append it to the new li element
+            const avengerName = document.createTextNode("Spider-Man");
+            newAvenger.appendChild(avengerName);
+
+            // Append new avenger to the list
+            avengerList.appendChild(newAvenger);
+        }
+    </script>
+
+</body>
+
+</html>
