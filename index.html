@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avengers: Dynamic Web Page</title>
+    <title>Avengers: DOM Manipulation</title>
+
     <link rel="stylesheet" href="style.css">
-    <script defer src="scripts.js"></script>
 </head>
+
 <body>
-    <header>
-        <h1 id="header-title">Avengers Assemble!</h1>
-    </header>
+<div class="container">
+    <div class="left">
+        <h1 id="title">Avengers Assemble!!</h1>
 
-    <main>
-        <section class="avenger" id="iron-man-section">
-            <h2>Iron Man</h2>
-            <img id="iron-man-img" src="iron-man.jpg" alt="Iron Man">
-            <p id="iron-man-description">Iron Man, aka Tony Stark, is a genius billionaire and a superhero in a powerful suit of armor.</p>
-            <button onclick="changeIronManDescription()">Change Iron Man Description</button>
-            <button onclick="changeIronManImage()">Change Iron Man Image</button>
-        </section>
+        <!-- List of Avengers -->
+        <ul id="avenger-list">
+            <li class="avenger">Iron Man</li>
+            <li class="avenger">Thor</li>
+            <li class="avenger">Captain America</li>
+            <li class="avenger">Black Widow</li>
+            <li class="avenger">Hulk</li>
+        </ul>
 
-        <section class="avenger" id="captain-america-section">
-            <h2>Captain America</h2>
-            <img id="captain-america-img" src="captain-america.jpg" alt="Captain America">
-            <p id="captain-america-description">Captain America, aka Steve Rogers, is a supersoldier with indestructible vibranium shield.</p>
-            <button onclick="changeCaptainAmericaDescription()">Change Captain America Description</button>
-            <button onclick="changeCaptainAmericaImage()">Change Captain America Image</button>
-        </section>
-    </main>
+        <!-- Image -->
+        <img id="avenger-img" src="assets/avengers-image1.jpeg" alt="Avengers Image">
+    </div>
 
-    <footer>
-        <p class="footer-text">All Rights Reserved &copy; Avengers</p>
-    </footer>
+    <div class="right">
+        <!-- Buttons -->
+        <button class="btn" onclick="changeText()">Change Title Text</button>
+        <button class="btn" onclick="highlightAvengers()">Highlight Avengers</button>
+        <button class="btn" onclick="changeImage()">Change Image</button>
+        <button class="btn" onclick="addAvenger()">Add New Avenger</button>
+    </div>
+</div>
+
+<footer>
+    <p class="footer-text">All Rights Reserved &copy; Avengers</p>
+    <p>Created with love by Riya <b>&hearts;</b></p>
+
+</footer>
+
+<script src="script.js"></script>
 </body>
+
 </html>

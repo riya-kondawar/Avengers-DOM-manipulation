@@ -1,38 +1,41 @@
-// scripts.js
+// Avengers scripts.js file
 
-// Change the description of Iron Man
-function changeIronManDescription() {
-    const description = document.getElementById('iron-man-description');
-    description.innerHTML = 'Iron Man, a leader of the Avengers, always steps up when the world needs a hero!';
-    description.style.color = 'yellow'; // Change text color to yellow
+
+// Function to change the title text using innerHTML
+function changeText() {
+    const title = document.getElementById("title");
+    title.innerHTML = "Assemble! The Avengers Are Here!";
 }
 
-// Change the Iron Man image
-function changeIronManImage() {
-    const ironManImage = document.getElementById('iron-man-img');
-    ironManImage.src = 'iron-man-new.jpg'; // Change to a new Iron Man image
+// Function to highlight Avengers by changing the color of text using getElementsByClassName
+function highlightAvengers() {
+    const avengers = document.getElementsByClassName("avenger");
+    for (let i = 0; i < avengers.length; i++) {
+        avengers[i].style.color = "red"; // Changing text color to red
+        avengers[i].style.fontSize = "22px"; // Changing font size
+    }
 }
 
-// Change the description of Captain America
-function changeCaptainAmericaDescription() {
-    const description = document.getElementById('captain-america-description');
-    description.innerHTML = 'Captain America, the ultimate symbol of justice and honor, always defends the helpless.';
-    description.style.color = 'lightblue'; // Change text color to light blue
+// Function to change the image source using getElementById
+function changeImage() {
+    const img = document.getElementById("avenger-img");
+    img.src = "assets/avengers-image2.png"; // Update with a new Avengers image
+    img.alt = "New Avengers Image";
 }
 
-// Change the Captain America image
-function changeCaptainAmericaImage() {
-    const captainAmericaImage = document.getElementById('captain-america-img');
-    captainAmericaImage.src = 'captain-america-new.jpg'; // Change to a new Captain America image
+// Function to add a new Avenger to the list
+function addAvenger() {
+    const avengerList = document.getElementById("avenger-list");
+
+    // Create new list item
+    const newAvenger = document.createElement("li");
+    newAvenger.className = "avenger"; // Add class to new element
+    newAvenger.style.color = "white"; // Set the color of new avenger
+
+    // Create text node and append it to the new li element
+    const avengerName = document.createTextNode("Spider-Man");
+    newAvenger.appendChild(avengerName);
+
+    // Append new avenger to the list
+    avengerList.appendChild(newAvenger);
 }
-
-// DOM manipulation using getElementsByClassName and getElementsByTagName
-document.addEventListener('DOMContentLoaded', () => {
-    // Change footer text color using getElementsByClassName
-    const footerText = document.getElementsByClassName('footer-text')[0];
-    footerText.style.color = 'green';
-
-    // Change header title font size using getElementsByTagName
-    const headerTitle = document.getElementsByTagName('h1')[0];
-    headerTitle.style.fontSize = '4rem';
-});
